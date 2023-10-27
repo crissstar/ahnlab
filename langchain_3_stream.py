@@ -67,3 +67,5 @@ The US will transfer thousands of seized Iranian weapons and rounds of ammunitio
 
 if __name__ == '__main__':
   main()
+  
+  print(f"Module name: {__name__}")

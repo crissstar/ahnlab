@@ -9,7 +9,7 @@
 import os
 import time
 import json
-
+import PyPDF2
 import openai
 
 from dotenv import load_dotenv
@@ -48,7 +48,7 @@ from langchain.document_loaders.blob_loaders.youtube_audio import YoutubeAudioLo
 
 def test_youtube() -> None:
   url="https://www.youtube.com/watch?v=jGwO_UgTS7I"
-  save_dir="docs/youtube/"
+  save_dir="./docs/youtube/"
   loader = GenericLoader(
     YoutubeAudioLoader([url],save_dir),
     OpenAIWhisperParser()
@@ -63,9 +63,9 @@ def test_youtube() -> None:
 from langchain.document_loaders import WebBaseLoader
 
 def test_url() -> None:
-  loader = WebBaseLoader("https://ko.wikipedia.org/wiki/NewJeans")
+  loader = WebBaseLoader("https://www.momjobgo.com/")
   docs = loader.load()
-  print("위키에서 뉴진스 문서를 로딩했습니다.")
+  print("맘잡고 문서를 로딩했습니다.")
   print(f"len(docs) => {len(docs)}")
   print(docs[0].page_content[:500])
   print( f"docs[0].metadata => {docs[0].metadata}" )

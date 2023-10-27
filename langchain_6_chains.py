@@ -139,7 +139,7 @@ def test_SequentialChain(df: pd.DataFrame) -> None:
 
 
 if __name__ == '__main__':
-  df: pd.DataFrame = pd.read_csv('data/Data.csv')
+  df: pd.DataFrame = pd.read_csv('./Data.csv')
   print(df.head())
 
   test_LLMChain()
